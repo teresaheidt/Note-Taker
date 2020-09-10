@@ -4,6 +4,32 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
+// Dependencies
+// =============================================================
+var express = require("express");
+var path = require("path");
+
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = 3000;
+
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Routes
+// =============================================================
+
+// Basic route that sends the user first to the AJAX Page
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "notes.html"));
+});
+
+app.get("/index", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
@@ -14,6 +40,9 @@ const getNotes = () => {
     method: "GET",
   });
 };
+
+
+
 
 // A function for saving a note to the db
 const saveNote = (note) => {
@@ -149,3 +178,10 @@ $noteText.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
+
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("NoteApp server is listening on PORT " + PORT);
+});
