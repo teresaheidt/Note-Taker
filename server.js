@@ -9,7 +9,7 @@ const fs = require("fs");
 // creating an "express" SERVER
 const app = express();
 // Sets an Initial PORT for listeners
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 const htmlRoutes = require("./routes/view")
 
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Basic route that sends the user first to the AJAX Page
-// app.use(require("./T-Best-Note-Taker/routes/view"))
+app.use(require("./T-Best-Note-Taker/routes/view"))
 
 // app.get("/api/notes", function(req, res) {
 //   return res.json(notes);
@@ -32,8 +32,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", htmlRoutes)
 
-
 // write new note to JSON file 
+
 
 
 // LISTENER

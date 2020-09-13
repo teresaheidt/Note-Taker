@@ -1,12 +1,24 @@
-// const router = require("express").Router()
 
-// app.post("/api/notes/", function(err, res) {
-//     try {
-//       notesData = fs.readFileSync(".db/db.json", "utf-8");
-//       console.log("important");
-//       notesData = JSON.parse(notesData);
-//     } catch (err) {
-//       console.log("\n error (in app.get.catch):");
-//       console.log(err);
-//     } res.json(notesData);
-//   })
+// make request to http://localhost:3000/api/data
+
+// GET REQUEST
+$.ajax({
+    url: "http://localhost:3000/api/data",
+    method: "GET"
+}).done(function(data) {
+    console.log(data);
+});
+
+// POST REQUEST
+const postData = {
+    noteTitle: "homework",
+    noteText: "woo"
+};
+
+$.ajax({
+    url: "http://localhost:3000/api/data",
+    method: "POST",
+    data: postData
+}).done(function(data) {
+    console.log(data);
+});
