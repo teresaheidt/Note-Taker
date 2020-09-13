@@ -1,16 +1,23 @@
 {
-  "name": "note-taker",
+  "name": "t-best-note-taker",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "- What - Why - How - Techology used - Images - Links ## What: This is an application that can be used to write, save and delete notes. ## Why: Easy to use and helps the user keep track of important notes, remove items no longer needed and ultimately keep the user well organized. All of the information the user would want is available when needed. ## How: Information is retreived from a JSON file. HTML and API routes were created to attain data. ## Technologies used: This application is deployed on Heroku. Express backend was used to save and retrieve data. HTML and css were used for the front end. ## Images: ## Links:",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teresaheidt/T-Best-Note-Taker.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node": "^14.8.0"
+  "bugs": {
+    "url": "https://github.com/teresaheidt/T-Best-Note-Taker/issues"
   },
-  "devDependencies": {},
-  "description": ""
+  "homepage": "https://github.com/teresaheidt/T-Best-Note-Taker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
