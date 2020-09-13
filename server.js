@@ -11,6 +11,10 @@ const app = express();
 // Sets an Initial PORT for listeners
 const PORT = process.env.PORT || 3000;
 
+const htmlRoutes = require("./routes/view")
+
+const apiRoutes = require("./routes/api")
+
 //  Initialize notesData
 
 
@@ -20,26 +24,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Basic route that sends the user first to the AJAX Page
-app.use(require("./T-Best-Note-Taker/routes/view"))
+// app.use(require("./T-Best-Note-Taker/routes/view"))
 
-app.get("/api/notes", function(req, res) {
-  return res.json(notes);
-});
+// app.get("/api/notes", function(req, res) {
+//   return res.json(notes);
+// });
 
-
+app.use("/", htmlRoutes)
 
 
 // write new note to JSON file 
-app.post("/api/notes/", function(err, res) {
-  try {
-    notesData = fs.readFileSync(".db/db.json", "utf-8");
-    console.log("important");
-    notesData = JSON.parse(notesData);
-  } catch (err) {
-    console.log("\n error (in app.get.catch):");
-    console.log(err);
-  } res.json(notesData);
-})
+
 
 // LISTENER
 app.listen(PORT, function() {
