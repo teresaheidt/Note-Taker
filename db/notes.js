@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const notes = require("/n");
+const notes = require("./db.json");
 
 const util = require("util");
 

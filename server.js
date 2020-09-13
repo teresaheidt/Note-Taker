@@ -9,7 +9,7 @@ const fs = require("fs");
 // creating an "express" SERVER
 const app = express();
 // Sets an Initial PORT for listeners
-const PORT = 3000;
+const PORT = 8000;
 
 const htmlRoutes = require("./routes/view");
 
@@ -21,15 +21,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Basic route that sends the user first to the AJAX Page
-app.use(require("./routes/view"))
 
-app.use("/api", api);
+
+app.use("/api", apiRoutes);
+
+app.use(require("./routes/view"))
 
 // app.get("/api/notes", function(req, res) {
 //   return res.json(notes);
 // });
 
-app.use("/", html);
+app.use("/", htmlRoutes);
 
 // write new note to JSON file 
 
