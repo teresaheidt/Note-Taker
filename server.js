@@ -11,9 +11,9 @@ const app = express();
 // Sets an Initial PORT for listeners
 const PORT = 3000;
 
-const htmlRoutes = require("./routes/view.js")
+const htmlRoutes = require("./routes/view");
 
-const apiRoutes = require("./routes/api.js")
+const apiRoutes = require("./routes/api");
 
 // Set up body parsing, static, and route middleware
 app.use(express.json());
@@ -23,15 +23,15 @@ app.use(express.static(path.join(__dirname, "public")));
 // Basic route that sends the user first to the AJAX Page
 app.use(require("./routes/view"))
 
+app.use("/api", api);
+
 // app.get("/api/notes", function(req, res) {
 //   return res.json(notes);
 // });
 
-app.use("/", htmlRoutes)
+app.use("/", html);
 
 // write new note to JSON file 
-
-
 
 // LISTENER
 app.listen(PORT, function() {
