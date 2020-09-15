@@ -19,6 +19,8 @@
   "homepage": "https://github.com/teresaheidt/T-Best-Note-Taker#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "heroku": "^7.43.0",
+    "react": "^16.13.1",
     "uuid": "^8.3.0"
   }
 }
