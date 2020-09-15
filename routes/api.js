@@ -17,11 +17,20 @@ router.post("/notes", (req, res) => {
 });
 
 // DELETE "/api/notes" deletes the note with an id equal to req.params.id
-router.delete("/notes/:id", function(req, res) {
+router.delete("/api/notes/:id", function(req, res) {
   store
     .removeNote(req.params.id)
     .then(() => res.json({ ok: true }))
     .catch(err => res.status(500).json(err));
 });
+
+
+     //updates the json file whenever a note is added or deleted
+     function updateDb() {
+      fs.writeFile("db/db.json",JSON.stringify(notes,'\t'),err => {
+          if (err) throw err;
+          return true;
+      });
+  }
 
 module.exports = router;
