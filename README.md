@@ -15,5 +15,7 @@ Information is retreived from a JSON file. HTML and API routes were created to a
 ## Technologies used:
 This application is deployed on Heroku. Express backend was used to save and retrieve data. HTML and css were used for the front end.
 ## Images:
+![screenshot](assets/screenshot.png)
 ## Links:
+[Link to deployed website:](https://teresaheidt.github.io/T-Best-Note-Taker/)
 

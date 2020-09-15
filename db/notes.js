@@ -31,7 +31,7 @@ class Notes {
     }
 
     addNote(note) {
-      const {title, text} = note;
+        const {title, text,} = note;
 
       if(!title || !text) {
           throw new Error("Note cannot be blank")
@@ -47,6 +47,7 @@ class Notes {
         .then(newNoteArray => this.write(newNoteArray))
         .then(() => newNote);
     }
+
     deleteNote(id) {
         return this.getAllNotes()
         .then(notesData => notesData.filter((note) => note.id !== id))
