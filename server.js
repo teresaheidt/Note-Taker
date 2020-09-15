@@ -56,8 +56,6 @@ app.delete("/api/notes/:id", function(req, res) {
 });
 
 
-
-
 // LISTENER
 app.listen(PORT, function() {
     console.log("The Note Server is listening... " + PORT);
