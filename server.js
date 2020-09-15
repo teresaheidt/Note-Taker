@@ -9,7 +9,7 @@ const fs = require("fs");
 // creating an "express" SERVER
 const app = express();
 // Sets an Initial PORT for listeners
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const htmlRoutes = require("./routes/view");
 
