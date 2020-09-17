@@ -21,7 +21,8 @@ router.post("/notes", (req, res) => {
 // DELETE "/api/notes" deletes the note with an id equal to req.params.id
 router.delete("/api/notes/:id", function(req, res) {
   store
-    .removeNote(req.params.id)
+  // we get this from the front end
+    .deleteNote(req.params.id)
     .then(() => res.json({ ok: true }))
     .catch(err => res.status(500).json(err));
 });
