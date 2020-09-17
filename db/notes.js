@@ -2,16 +2,20 @@ const router = require("express").Router();
 
 const notes = require("./db.json");
 
+// provides acces to utility functions
 const util = require("util");
 
+// enables interacting with file system
 const fs = require("fs");
 
 // generates ID
 const { v4: uuidv4 } = require("uuid");
 
+// converts a callback based function to a promised one
 const readFileAsync = util.promisify(fs.readFile); 
 const writeFileAsync = util.promisify(fs.writeFile);
 
+// class declaration
 class Notes {
     read() {
         return readFileAsync("db/db.json", "utf-8")
@@ -30,7 +34,7 @@ class Notes {
             return notesData;
         })
     }
-
+// adding notes
     addNote(note) {
         const {title, text,} = note;
 
@@ -48,7 +52,7 @@ class Notes {
         .then(newNoteArray => this.write(newNoteArray))
         .then(() => newNote);
     }
-
+// remove the note
     deleteNote(id) {
         return this.getAllNotes()
         .then(notesData => notesData.filter((note) => note.id !== id))

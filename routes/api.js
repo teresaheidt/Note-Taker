@@ -1,3 +1,4 @@
+// router and store variables to attain serverside info for frontend
 const router = require("express").Router();
 const store = require("../db/notes");
 
@@ -9,6 +10,7 @@ router.get("/notes", function(req, res) {
     .catch(err => res.status(500).json(err));
 });
 
+// post notes on the backend
 router.post("/notes", (req, res) => {
   store
     .addNote(req.body)

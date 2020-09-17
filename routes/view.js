@@ -1,3 +1,4 @@
+// variable set for the path and express to run the app
 const router = require("express").Router()
 const path = require("path")
 
