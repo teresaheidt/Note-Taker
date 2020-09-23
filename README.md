@@ -17,15 +17,15 @@ This application is deployed on Heroku. Express backend was used to save and ret
 ## Images:
 This is the entry in to T Best Note Taker application
 
-![screenshot](assets/screenshot.png)
+![screenshot](./public/assets/imgs/screenshot.png)
 
 Once in the application, the user can enter in as many notes as they like. The user clicks save on the upper right corner of the screen and the notes are rendered to the left side of the screen.
 
-![screenshot](assets/list.png)
+![screenshot](.public/assets/imgs/list.png)
 
 A trash bin will be beside each of the notes, so when the user clicks the trash bin, the note will be deleted. However, if the user wants to view an already saved note, they can do so by pressing any one of the aved notes from the list. The description will appear on the main page.
 
-![screenshot](assets/delete.png) 
+![screenshot](public/assets/imgs/delet.png) 
 
 ## Links:
 [Link to deployed website:](https://teresaheidt.github.io/T-Best-Note-Taker/)
